@@ -19,10 +19,10 @@
     Тогда пользователь кликает <check> чекбокс
     Тогда пользователь кликает <check1> чекбокс
     Тогда пользователь загружает файл <attach>
-    Тогда пользователь вводит <text4> в поле <curent address>
+    Тогда пользователь вводит <text4> в поле <current address>
     Тогда пользователь выбирает NCR в поле state
     Тогда пользователь выбирает Noida в поле city
     Тогда пользователь нажимает кнопку Submit
     Примеры:
-      | text    | first name  | text1        | last name  | text2                          | email       | gender | text3        | mobile       | mounth     | year   | day  | name5               | subject   | check     | check1  | attach    | text4                | curent address   |
+      | text    | first name  | text1        | last name  | text2                          | email       | gender | text3        | mobile       | mounth     | year   | day  | name5               | subject   | check     | check1  | attach    | text4                | current address   |
       | "Denis" | "firstName" | "Andreyanov" | "lastName" | "andreyanov.denis92@gmail.com" | "userEmail" | "Male" | "9190895613" | "userNumber" | "December" | "1992" | "12" | "subjectsContainer" | "English" | "Reading" | "Music" | "mem.jpg" | "На деревню дедушке" | "currentAddress" |
