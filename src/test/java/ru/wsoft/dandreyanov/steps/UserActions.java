@@ -1,12 +1,15 @@
 package ru.wsoft.dandreyanov.steps;
 
 import com.codeborne.selenide.Condition;
+import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.openqa.selenium.By;
 
 import java.io.File;
 
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.textCaseSensitive;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -60,7 +63,7 @@ public class UserActions {
 
     @Тогда("пользователь кликает {string} чекбокс")
     public void пользовательКликаетЧекбокс(String check) {
-        $$(By.id("hobbiesWrapper")).findBy(text(check));
+        $$(By.id("hobbiesWrapper")).findBy(text(check)).click();
     }
 
     @Тогда("пользователь кликает на поле {string}")
@@ -97,9 +100,24 @@ public class UserActions {
         $(By.xpath("//div[@id='react-select-3-option-0']")).click();
     }
 
-    @Тогда("пользователь выбирает Noida в поле city")
+    @Когда("пользователь выбирает Noida в поле city")
     public void пользовательВыбираетNoidaВПолеCity() {
         $(By.xpath("//div[contains(text(),'Select City')]")).click();
         $(By.xpath("//div[@id='react-select-4-option-2']")).click();
+    }
+
+    @Тогда("пользователь видит надпись Thanks for submitting the form")
+    public void пользовательВидитНадписьThanksForSubmittingTheForm() {
+        $(By.id("example-modal-sizes-title-lg")).shouldHave(textCaseSensitive("Thanks for submitting the form"));
+    }
+
+    @Тогда("в строке {string} есть запись {string}")
+    public void вСтрокеЕстьЗапись(String tr, String result) {
+        $$(".table-responsive tr").filterBy(text(tr)).shouldHave(texts(result));
+    }
+
+    @Когда("пользователь нажимает кнопку Close")
+    public void пользовательНажимаетКнопкуClose() {
+        $(By.id("closeLargeModal")).click();
     }
 }

@@ -5,24 +5,35 @@
   @smoke
   Структура сценария: Заполнение всех полей и отправка анкеты
     Дано открыта страница Practice Form
-    Тогда пользователь вводит <text> в поле <first name>
-    Тогда пользователь вводит <text1> в поле <last name>
-    Тогда пользователь вводит <text2> в поле <email>
-    Тогда пользователь нажимает <gender> радио-кнопку
-    Тогда пользователь вводит <text3> в поле <mobile>
-    Тогда пользователь кликает на календарь
-    Тогда пользователь выбирает <mounth> в выборе месяца календаря
-    Тогда пользователь выбирает <year> в выборе года календаря
-    Тогда пользователь кликает число <day> в календаре
-    Тогда пользователь кликает на поле <name5>
-    Тогда пользователь выбирает <subject> в поле subjects
-    Тогда пользователь кликает <check> чекбокс
-    Тогда пользователь кликает <check1> чекбокс
-    Тогда пользователь загружает файл <attach>
-    Тогда пользователь вводит <text4> в поле <current address>
-    Тогда пользователь выбирает NCR в поле state
-    Тогда пользователь выбирает Noida в поле city
-    Тогда пользователь нажимает кнопку Submit
+    Когда пользователь вводит <firstName> в поле "firstName"
+    Когда пользователь вводит <lastName> в поле "lastName"
+    Когда пользователь вводит <email> в поле "userEmail"
+    Когда пользователь нажимает <gender> радио-кнопку
+    Когда пользователь вводит <phone> в поле "userNumber"
+    Когда пользователь кликает на календарь
+    Когда пользователь выбирает <month> в выборе месяца календаря
+    Когда пользователь выбирает <year> в выборе года календаря
+    Когда пользователь кликает число <day> в календаре
+    Когда пользователь кликает на поле "subjectsContainer"
+    Когда пользователь выбирает <subject> в поле subjects
+    Когда пользователь кликает <check> чекбокс
+    Когда пользователь загружает файл <attach>
+    Когда пользователь вводит <address> в поле "currentAddress"
+    Когда пользователь выбирает NCR в поле state
+    Когда пользователь выбирает Noida в поле city
+    Когда пользователь нажимает кнопку Submit
+    Тогда пользователь видит надпись Thanks for submitting the form
+    Тогда в строке "Student Name" есть запись "Denis Andreyanov"
+    Тогда в строке "Student Email" есть запись <email>
+    Тогда в строке "Gender" есть запись <gender>
+    Тогда в строке "Mobile" есть запись <phone>
+    Тогда в строке "Date of Birth" есть запись "12 December,1992"
+    Тогда в строке "Subjects" есть запись <subject>
+    Тогда в строке "Hobbies" есть запись <check>
+    Тогда в строке "Picture" есть запись <attach>
+    Тогда в строке "Address" есть запись <address>
+    Тогда в строке "State and City" есть запись "NCR Noida"
+    Когда пользователь нажимает кнопку Close
     Примеры:
-      | text    | first name  | text1        | last name  | text2                          | email       | gender | text3        | mobile       | mounth     | year   | day  | name5               | subject   | check     | check1  | attach    | text4                | current address   |
-      | "Denis" | "firstName" | "Andreyanov" | "lastName" | "andreyanov.denis92@gmail.com" | "userEmail" | "Male" | "9190895613" | "userNumber" | "December" | "1992" | "12" | "subjectsContainer" | "English" | "Reading" | "Music" | "mem.jpg" | "На деревню дедушке" | "currentAddress" |
+      | firstName    | lastName        | email                          | gender | phone        | month      | year   | day  |  subject   | check     | attach    | address                |
+      | "Denis"      | "Andreyanov"    | "andreyanov.denis92@gmail.com" | "Male" | "9190895613" | "December" | "1992" | "12" |  "English" | "Reading" | "mem.jpg" | "На деревню дедушке"   |
