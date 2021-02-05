@@ -17,6 +17,11 @@ public class MainPage {
         open("https://demoqa.com/automation-practice-form");
     }
 
+    @Дано("открыта страница {string}")
+    public void открытаСтраница(String url) {
+        open(url);
+    }
+
     @Тогда("есть баннер {string}")
     public void естьБаннерPracticeForm(String name) {
         $(By.className("body-height")).shouldHave(Condition.text(name));

@@ -68,6 +68,17 @@ task smoke_test() {
     }
 }
 
+task github_test() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output + files( 'build/classes/java/test')
+            args = ['--plugin', 'io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm', '--glue', 'ru.wsoft.dandreyanov', 'src/test/resources/features/github_test.feature']
+        }
+    }
+}
+
 task copyConfig(type: Copy) {
     from 'src/test/resources/config'
     into 'allure-results'
