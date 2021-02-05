@@ -1,6 +1,5 @@
 package ru.wsoft.dandreyanov.steps;
 
-import com.codeborne.selenide.Condition;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.openqa.selenium.By;
@@ -69,12 +68,10 @@ public class UserActions {
     @Тогда("пользователь кликает на поле {string}")
     public void пользовательКликаетНаПоле(String name) {
         $(By.xpath("//div[@id='"+name+"']/div/div")).click();
-//        $(By.id(name)).sendKeys("E");
     }
 
     @Тогда("пользователь выбирает {string} в поле subjects")
     public void пользовательВыбираетВПолеSubjects(String option) {
-//        $(By.xpath("//input[@id='subjectsInput']")).selectOption(option);
         $(By.xpath("//input[@id='subjectsInput']")).setValue(option);
         $(By.id("react-select-2-option-0")).click();
     }

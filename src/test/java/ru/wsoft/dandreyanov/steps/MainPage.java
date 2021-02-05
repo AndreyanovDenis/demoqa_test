@@ -5,8 +5,6 @@ import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Тогда;
 import org.openqa.selenium.By;
 
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -59,12 +57,6 @@ public class MainPage {
     public void естьКнопкаЗагрузкиФайлов() {
         $(By.id("uploadPicture")).shouldHave(Condition.visible);
     }
-
-//    @Тогда("есть выпадающий список")
-//    public void естьВыпадающийСписок(List<String> string) {
-//        $(By.id("state")).shouldHave(Condition.text(string.toArray(new String[0])));
-//    }
-
 
 }
 
